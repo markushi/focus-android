@@ -37,6 +37,8 @@ tasks:
           && git checkout {{event.head.sha}}
           && echo "--" > .adjust_token
           && ./gradlew clean assemble detektCheck ktlint lint pmd checkstyle findbugs test
+          && chmod +x ./tools/taskcluster/execute-firebase-test.sh
+          && ./tools/taskcluster/execute-firebase-test.sh
       artifacts:
         'public':
           type: 'directory'
@@ -64,6 +66,8 @@ tasks:
           - push
         branches:
           - master
+    scopes:
+      - "secrets:get:project/focus/tokens"
     payload:
       maxRunTime: 3600
       deadline: "{{ '2 hours' | $fromNow }}"

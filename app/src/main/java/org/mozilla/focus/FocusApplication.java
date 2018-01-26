@@ -9,7 +9,7 @@ import android.arch.lifecycle.LiveData;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
 
-import com.squareup.leakcanary.LeakCanary;
+//import com.squareup.leakcanary.LeakCanary;
 
 import org.mozilla.focus.locale.LocaleAwareApplication;
 import org.mozilla.focus.search.SearchEngineManager;
@@ -30,10 +30,10 @@ public class FocusApplication extends LocaleAwareApplication {
 
     @Override
     public void onCreate() {
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-           return;
-        }
-        LeakCanary.install(this);
+        //if (LeakCanary.isInAnalyzerProcess(this)) {
+        //   return;
+        //}
+        //LeakCanary.install(this);
         super.onCreate();
 
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
