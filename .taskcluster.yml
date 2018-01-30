@@ -27,9 +27,8 @@ tasks:
       - "secrets:get:project/focus/tokens"
 
     payload:
-      features: {
-             "taskclusterProxy": true
-      }
+      features:
+        "taskclusterProxy": true
       maxRunTime: 3600
       deadline: "{{ '2 hours' | $fromNow }}"
       image: 'mozillamobile/focus-android'
@@ -75,9 +74,8 @@ tasks:
     scopes:
       - "secrets:get:project/focus/tokens"
     payload:
-      features: {
-                   "taskclusterProxy": true
-      }
+      features:
+        "taskclusterProxy": true
       maxRunTime: 3600
       deadline: "{{ '2 hours' | $fromNow }}"
       image: 'mozillamobile/focus-android'
@@ -118,9 +116,6 @@ tasks:
     scopes:
       - "secrets:get:project/focus/tokens"
     payload:
-      features: {
-                   "taskclusterProxy": true
-      }
       maxRunTime: 3600
       deadline: "{{ '2 hours' | $fromNow }}"
       image: 'mozillamobile/focus-android'
